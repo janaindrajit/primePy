@@ -14,7 +14,7 @@ You may run `primes.about()` afer installtion. The following is a list of all in
 `primes.first(n)` returns first *n* many primes. <br />
 `primes.upto(n)` returns all the primes less than or equal to *n*. <br />
 `primes.between(m,n)` returns all the primes between *m* and *n*. <br />
-`primes.phi(n)` returns the Euler's *phi(n)* i.e., the number of integers less than *n* which have no common factor. <br />
+`primes.phi(n)` returns the Euler's *phi(n)* i.e., the number of integers less than *n* which have no common factor with *n*. <br />
 
 
 ## Demonstration

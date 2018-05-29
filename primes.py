@@ -82,4 +82,17 @@ def upto(n):
     if list[-1]>n:
         list=list[:-1] 
     return list
-        
+
+def between(m,n):
+    d=0
+    x=[]
+    if m%2==0:
+        d=1
+    else:
+        d=0
+    for i in range(m+d,n,2):
+        if check(i):
+            x+=[i]
+        else:
+            x=x
+    return x
