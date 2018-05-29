@@ -1,5 +1,5 @@
 # primes
-This module contains several useful functions to work with prime numbers. Following the list of all functions.
+This module contains several useful functions to work with prime numbers. For example, extracting all the prime factors (with multiplicity) of a positive integer reasonably fast. Following the list of all functions and their running time.
 
 ## Getting started
 Download the file primes.py and place it in he same directory where your python is installed. Or simply run the command `pip install primes` to install the pachage.
@@ -17,7 +17,7 @@ You may run `primes.about()` afer installtion. The following is a list of all in
 `primes.phi(n)` returns the Euler's *phi(n)* i.e., the number of integers less than *n* which have no common factor. <br />
 
 
-## Demonsration
+## Demonstration
 
 This program is tested on my personal laptop with the following configurations.
 
@@ -25,7 +25,8 @@ This program is tested on my personal laptop with the following configurations.
 >Installed memory(RAM): 6.00GB <br/>
 >System type: 64 bit Operating System, x64-based processor<br/>
 >Operating system: Windows 10
- ###small numbers
+
+###small numbers
 ```
 >>> primes.check(56156149)
 False

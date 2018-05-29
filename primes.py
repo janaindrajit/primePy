@@ -21,54 +21,49 @@ def factor(num):
         return 2
     else:
         for i in range(3, int(sqrt(num))+1, 2): #I could iteratte over a list of primes
-            if num%i==0: #But creating that list of primes turns out even more inensive tusk
-                return i #Best results were obtained when only the even numbers were iltered out
+            if num%i==0: #But creating that list of primes turns out even more inensive task
+                return i 
         else:
             return num
 
 def check(num):
-    if factor(num)==num: #if the lowest factor is the number itself
+    if factor(num)==num:
         return True
     else:
         return False
 
 def factors(num):
     fact=factor(num)
-    new_num=num//fact #// is used to force an integer division
-    #otherwile floating divisions gives round up error
+    new_num=num//fact
     factors=[fact]
     while new_num!=1:
         fact=factor(new_num)
         factors+=[fact]
-        new_num//=fact #//=int division
+        new_num//=fact
     return factors
 
 def phi(num):
     val=num
-    list=factors(num) #collect all factors
-    sets=set(list) #Make it a set by removing duplicates
+    list=factors(num) 
+    sets=set(list) 
     for i in sets:
         val=(val//i)*(i-1)
     return val
         
-#To find the next prime based on a previous list of primes
-#This function can't be accessed from outside of the module
+
 def __next_prime(list): 
     if list==[2]:
         a=3
     else:
         a=list[-1]+2
         found=0 
-        while found==0: # Keep searching until a new prime is found
+        while found==0: 
             for i in list:
                 if a%i==0:
                     a=a+1
-                    break # Breaks the current instance of for loop only
-                    #But since still flag==0, the outer while looop 
-                    #will initiate the for loop agaiin with a=a+1
-            else: #This elase is invoked if the for loop is not broken
-            #See it is aligned with for not with if.
-                found=1 #Flag down when a new prime is found
+                    break 
+            else:
+                found=1 
     return a
 
 
@@ -81,10 +76,10 @@ def first(n):
 
 def upto(n):
     list=[2]
-    while list[-1]<n: #list[-1] gives the last element of the list
+    while list[-1]<n: 
         new_entry=__next_prime(list)
         list+=[new_entry]
     if list[-1]>n:
-        list=list[:-1] #list[-1] removes the last elemnt of the list
+        list=list[:-1] 
     return list
         
