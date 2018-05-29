@@ -17,4 +17,28 @@ You may run `primes.about()` afer installtion. The following is a list of all in
 `primes.phi(n)` returns the Euler's *phi(n)* i.e., the number of integers less than *n* which have no common factor. <br />
 
 
-### `primes.check`
+## Demonsration
+
+This program is tested on my personal laptop with the following configurations.
+
+>Processor: Intel(R) Core(TM) i3-4030U CPU @ 1.90Ghz<br/>
+>Installed memory(RAM): 6.00GB <br/>
+>System type: 64 bit Operating System, x64-based processor<br/>
+>Operating system: Windows 10
+ ###small numbers
+```
+>>> primes.check(56156149)
+False
+>>> primes.check(789012345678901)
+True
+```
+```
+
+>>> primes.factor(7568945625)
+3
+>>> primes.factor(5141)
+53
+```
+
+
+
