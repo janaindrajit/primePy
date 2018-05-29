@@ -1,14 +1,14 @@
-# primes
+# primes from module primePy
 This module contains several useful functions to work with prime numbers. For example, extracting all the prime factors (with multiplicity) of a positive integer reasonably fast. Following the list of all functions and their running time.
 
 ## Getting started
 Download the file primes.py and place it in the same directory where your python is installed. Or, simply run the command 
 ```
->>>pip install primes
+>>>pip install primePy
 ```
 to install the package. After either of the above two methods you can call it by 
 ```
->>>import primes
+>>>from primePy import primes
 ```
  and then execute the available methods.
 
