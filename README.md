@@ -26,7 +26,8 @@ This program is tested on my personal laptop with the following configurations.
 >System type: 64 bit Operating System, x64-based processor<br/>
 >Operating system: Windows 10
 
-###small numbers
+### Small numbers
+
 ```
 >>> primes.check(56156149)
 False
