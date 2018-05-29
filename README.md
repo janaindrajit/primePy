@@ -2,7 +2,7 @@
 This module contains several useful functions to work with prime numbers. For example, extracting all the prime factors (with multiplicity) of a positive integer reasonably fast. Following the list of all functions and their running time.
 
 ## Getting started
-Download the file primes.py and place it in he same directory where your python is installed. Or simply run the command 
+Download the file primes.py and place it in the same directory where your python is installed. Or, simply run the command 
 ```
 >>>pip install primes
 ```
@@ -106,8 +106,8 @@ Outcomes from the last command is truncated.
 All the following commands returned results in less than *5 secs*.
 
 ```
->>> primes.factors(225213155169257839996967418467924041)
-[599, 5743, 6949, 7673, 9073709, 135318058916441]
+>>> primes.factors(2910046587320501324077792713140104371205630933992706145011)
+[239, 701, 709, 1997, 1997, 3889, 5171, 5171, 6983, 10009, 4940867, 45845791, 3731292319]
 ```
 
 ```
