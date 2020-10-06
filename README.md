@@ -13,12 +13,12 @@ to install the package. After either of the above two methods you can call it by
  and then execute the available methods.
 
 ## Available methods
-You may run `primes.about()` afer importing the package. The following is a list of all included methods.
+You may run `primes.about()` after importing the package. The following is a list of all included methods.
 
 
 `primes.check(n)` returns *True* if *n* is a prime number.<br />
 `primes.factor(n)` returns the lowest prime factor of *n*. <br />
-`primes.facors(n)` returns all the prime factors of *n* with multiplicity.<br />
+`primes.factors(n)` returns all the prime factors of *n* with multiplicity.<br />
 `primes.first(n)` returns first *n* many primes. <br />
 `primes.upto(n)` returns all the primes less than or equal to *n*. <br />
 `primes.between(m,n)` returns all the primes between *m* and *n*. <br />
@@ -35,7 +35,7 @@ This program is tested on my personal laptop with the following configurations.
 >Operating system: Windows 10
 
 ### Small numbers
-All the following commands returnd results in less than *1 sec*.
+All the following commands returned results in less than *1 sec*.
 
 ```
 >>> primes.check(56156149)
