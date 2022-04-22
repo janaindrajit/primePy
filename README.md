@@ -13,8 +13,6 @@ to install the package. After either of the above two methods you can call it by
  and then execute the available methods.
 
 ## Available methods
-You may run `primes.about()` afer importing the package. The following is a list of all included methods.
-
 
 `primes.check(n)` returns *True* if *n* is a prime number.<br />
 `primes.factor(n)` returns the lowest prime factor of *n*. <br />
