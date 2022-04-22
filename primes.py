@@ -2,97 +2,193 @@
 #In addition, it can do several other operations including Euler totient funcion.
 #run primes.about() to see the list of all functionality
 
-#Written by Indrajit Jana. Suggestions are appreciated. Send those to ijana@temple.edu
+#Written by Indrajit Jana. Suggestions are appreciated. Send those to ijana@iitbbs.ac.in
 from math import sqrt
 
-def about():
-    print("\'primes.check(n)\' returns \'True\' if \'n\' is a prime number")
-    print("\'primes.factor(n)\' returns the lowest prime factor of \'n\'")
-    print("\'primes.facors(n)\' returns all the prime factors of \'n\' with multiplicity")
-    print("\'primes.first(n)\' returns first \'n\' many primes")
-    print("\'primes.upto(n)\' returns all the primes less than or equal to \'n\'")
-    print("\'primes.between(m,n)\' returns all the primes between \'m\' and \'n\'")
-    print("\'primes.phi(n)\' returns the Euler's phi(n)")
-    print("i.e., the number of integers less than n which have no common factor")
-
 #Calculates the lowest prime factor by default
-def factor(num):
+def factor(num:int)->int:
+    '''
+    
+
+    Parameters
+    ----------
+    num : int
+        Input number
+
+    Returns
+    -------
+    int
+       Lowest prime factor
+
+    '''
+    if num == 1:
+        return 1
     if num==2 or num%2==0:
         return 2
+    if num==3 or num%3==0:  # dakra added
+        return 3            # dakra added
     else:
-        for i in range(3, int(sqrt(num))+1, 2): #I could iteratte over a list of primes
-            if num%i==0: #But creating that list of primes turns out even more inensive task
-                return i 
+        for i in range(6, int(sqrt(num))+7, 6): # dakra Primes > 3 are all either
+              if num%(i-1)==0: return i-1       # dakra 5 mod 6 or
+              if num%(i+1)==0: return i+1       # dakra 1 mod 6
+                                                # dakra saving all the tests for number which are 3 mod 6.
         else:
             return num
 
-def check(num):
+def check(num:int)->bool:
+    '''
+    
+
+    Parameters
+    ----------
+    num : int
+        Input number
+
+    Returns
+    -------
+    bool
+        True if the given number is prime
+
+    '''
     if factor(num)==num:
         return True
     else:
         return False
 
-def factors(num):
+def factors(num:int)->list:
+    '''
+    
+
+    Parameters
+    ----------
+    num : int
+        Given number
+
+    Returns
+    -------
+    list
+        List of prime factors
+
+    '''
     fact=factor(num)
     new_num=num//fact
     factors=[fact]
     while new_num!=1:
         fact=factor(new_num)
-        factors+=[fact]
+        factors.append(fact)
         new_num//=fact
     return factors
 
-def phi(num):
+def phi(num:int)->int:
+    '''
+    >>phi(9)
+    6
+    Because, these six numbers [1, 2, 3, 4, 5, 7] are mutually prime to 9
+
+    Parameters
+    ----------
+    num : int
+        Given number
+
+    Returns
+    -------
+    int
+        Number of integers less than the given number which are mutually prime to the given number
+        
+
+    '''
     val=num
-    list=factors(num) 
-    sets=set(list) 
+    facts=factors(num) 
+    sets=set(facts) 
     for i in sets:
         val=(val//i)*(i-1)
     return val
         
 
-def __next_prime(list): 
-    if list==[2]:
+def __next_prime(given:list)->int: 
+    if given==[2]:
         a=3
     else:
-        a=list[-1]+2
-        found=0 
-        while found==0: 
-            for i in list:
+        a=given[-1]+2 #Next odd number (possible prime)
+        found=False      
+        while not found: 
+            if a%6==3: a+=2      # dakra added. primes>3 are all either 1 or 5 mod 6. Skips 33% of candidates.
+            imax=int(sqrt(a))+1  # dakra: will only test up to the sqrt(a) 
+            for i in given:                
                 if a%i==0:
-                    a=a+1
-                    break 
-            else:
-                found=1 
+                    a+=2   # dakra changed from +1 to +2 to skip testing even numbers
+                    break  
+                if i>=imax: # dakra no more testing required.
+                    found=True
+                    break
+            
     return a
 
 
-def first(n):
-    list=[2]
-    while len(list)<n:
-        new_entry=__next_prime(list)
-        list+=[new_entry]
-    return list
+def first(n:int)->list:
+    '''
+    
 
-def upto(n):
-    list=[2]
-    while list[-1]<n: 
-        new_entry=__next_prime(list)
-        list+=[new_entry]
-    if list[-1]>n:
-        list=list[:-1] 
-    return list
+    Parameters
+    ----------
+    n : int
+        Integer input
 
-def between(m,n):
-    d=0
+    Returns
+    -------
+    list
+        List of first n many primes
+
+    '''
+    given=[2]
+    while len(given)<n:
+        new_entry=__next_prime(given)
+        given.append(new_entry)
+    return given
+
+def upto(n:int)->list:
+    '''
+    
+
+    Parameters
+    ----------
+    n : int
+        Integer input
+
+    Returns
+    -------
+    list
+        List of primes which are less than or equal to n.
+
+    '''
+    given=[2]
+    while given[-1]<n: 
+        new_entry=__next_prime(given)
+        given.append(new_entry)
+    if given[-1]>n:
+        given=given[:-1] 
+    return given
+
+def between(m:int,n:int)->list:
+    '''
+    
+
+    Parameters
+    ----------
+    m : int
+        Lower bound.
+    n : int
+        Upper bound.
+
+    Returns
+    -------
+    list
+        List of primes in between m, and n (including m, n whenever applicable).
+
+    '''
     x=[]
-    if m%2==0:
-        d=1
-    else:
-        d=0
-    for i in range(m+d,n,2):
+    d = 1 if m%2==0 else 0
+    for i in range(m+d,n+1,2):
         if check(i):
-            x+=[i]
-        else:
-            x=x
+            x.append(i)
     return x
