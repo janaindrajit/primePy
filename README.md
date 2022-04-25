@@ -3,12 +3,12 @@ This module contains several useful functions to work with prime numbers. For ex
 
 ## Getting started
 Download the file primes.py and place it in the same directory where your python is installed. Or, simply run the command 
-```
->>>pip install primePy
+```sh
+$ pip install primePy
 ```
 to install the package. After either of the above two methods you can call it by 
-```
->>>from primePy import primes
+```python
+>>> from primePy import primes
 ```
  and then execute the available methods.
 
@@ -16,7 +16,7 @@ to install the package. After either of the above two methods you can call it by
 
 `primes.check(n)` returns *True* if *n* is a prime number.<br />
 `primes.factor(n)` returns the lowest prime factor of *n*. <br />
-`primes.facors(n)` returns all the prime factors of *n* with multiplicity.<br />
+`primes.factors(n)` returns all the prime factors of *n* with multiplicity.<br />
 `primes.first(n)` returns first *n* many primes. <br />
 `primes.upto(n)` returns all the primes less than or equal to *n*. <br />
 `primes.between(m,n)` returns all the primes between *m* and *n*. <br />
@@ -35,28 +35,28 @@ This program is tested on my personal laptop with the following configurations.
 ### Small numbers
 All the following commands returnd results in less than *1 sec*.
 
-```
+```python
 >>> primes.check(56156149)
 False
 >>> primes.check(79012338765433)
 True
 ```
 
-```
+```python
 >>> primes.factor(7568945625)
 3
 >>> primes.factor(5141)
 53
 ```
 
-```
+```python
 >>> primes.factors(252)
 [2, 2, 3, 3, 7]
 >>> primes.factors(44410608)
 [2, 2, 2, 2, 3, 3, 11, 23, 23, 53]
 ```
 
-```
+```python
 >>> primes.first(7)
 [2, 3, 5, 7, 11, 13, 17]
 >>> primes.first(37)
@@ -71,7 +71,7 @@ True
 ```
 Outcomes from the last command is truncated.
 
-```
+```python
 >>> primes.upto(16)
 [2, 3, 5, 7, 11, 13]
 >>> primes.upto(50000)
@@ -83,7 +83,7 @@ Outcomes from the last command is truncated.
 49921, 49927, 49937, 49939, 49943, 49957, 49991, 49993, 49999]
 ```
 
-```
+```python
 >>> primes.between(100,200)
 [101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199]
 >>> primes.between(100000,500000)
@@ -93,7 +93,7 @@ Outcomes from the last command is truncated.
 499661, 499663, 499669, 499673, 499679, 499687, 499691, 499693, 499711, 499717, 499729, 499739, 499747, 499781, 499787, 499801, 499819, 499853, 499879, 499883, 499897, 499903, 499927, 499943, 499957, 499969, 499973, 499979]
 ```
 
-```
+```python
 >>> primes.phi(128)
 64
 >>> primes.phi(561534567567457)
@@ -103,12 +103,12 @@ Outcomes from the last command is truncated.
 
 All the following commands returned results in less than *5 secs*.
 
-```
+```python
 >>> primes.factors(2910046587320501324077792713140104371205630933992706145011)
 [239, 701, 709, 1997, 1997, 3889, 5171, 5171, 6983, 10009, 4940867, 45845791, 3731292319]
 ```
 
-```
+```python
 >>> primes.first(10000)[9999]
 104729
 ```
