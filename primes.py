@@ -22,7 +22,7 @@ def factor(num:int)->int:
 
     '''
     if num == 1:
-        return 1
+        return 2
     if num==2 or num%2==0:
         return 2
     if num==3 or num%3==0:  # dakra added
