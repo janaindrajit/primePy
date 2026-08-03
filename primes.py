@@ -21,8 +21,8 @@ def factor(num:int)->int:
        Lowest prime factor
 
     '''
-    if num == 1:
-        return 2
+    if num == 1 or num <= 0:
+        return None
     if num==2 or num%2==0:
         return 2
     if num==3 or num%3==0:  # dakra added
@@ -71,13 +71,16 @@ def factors(num:int)->list:
 
     '''
     fact=factor(num)
-    new_num=num//fact
-    factors=[fact]
-    while new_num!=1:
-        fact=factor(new_num)
-        factors.append(fact)
-        new_num//=fact
-    return factors
+    if(fact) :
+        new_num=num//fact
+        factors=[fact]
+        while new_num!=1:
+            fact=factor(new_num)
+            factors.append(fact)
+            new_num//=fact
+        return factors
+    else :
+        return []
 
 def phi(num:int)->int:
     '''
