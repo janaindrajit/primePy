@@ -117,7 +117,7 @@ The last command returns the 10000th prime.
 ## Suggestions
 Feel free to drop your suggestion at the following email address<br/>
 >Author: Indrajit Jana<br/>
->Email: ijana at temple dot edu
+>Email: jana dot indrajit at gmail dot com
 
 
 
